@@ -1,3 +1,4 @@
+pub mod utils;
 use std::sync::Arc;
 
 use serde::{Deserialize, Serialize};
@@ -11,6 +12,15 @@ pub enum FromClient {
         group_name: Arc<String>,
         message: Arc<String>,
     },
+}
+
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub enum FromServer {
+    Message {
+        group_name: Arc<String>,
+        message: Arc<String>,
+    },
+    Error(String),
 }
 
 #[test]
