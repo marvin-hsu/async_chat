@@ -1,5 +1,6 @@
-mod group_table;
 mod connection;
+mod group;
+mod group_table;
 
 use std::sync::Arc;
 
